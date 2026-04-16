@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Caftan Prestige</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    background-color: #f5f0e6; /* beige */
+}
+
+/* Barre du haut */
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 15px;
+    background: #e8dcc7;
+}
+
+/* Logo en haut à droite */
+.logo {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Barre de recherche */
+.search-bar {
+    width: 300px;
+    padding: 8px;
+    border-radius: 10px;
+    border: 1px solid #aaa;
+}
+
+/* Panier gauche */
+.cart {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 200px;
+    height: 100%;
+    background: #d9cbb0;
+    padding: 10px;
+}
+
+/* Contenu */
+.content {
+    margin-left: 220px;
+    padding: 20px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+    <input class="search-bar" type="text" placeholder="Rechercher un caftan...">
+
+    <div class="logo" onclick="goHome()">🏠 Logo</div>
+</div>
+
+<div class="cart">
+    <h3>🛒 Panier</h3>
+    <p>Aucun article</p>
+</div>
+
+<div class="content">
+    <h1>Caftan Prestige ✨</h1>
+    <p>Bienvenue sur notre boutique de caftans</p>
+</div>
+
+<script>
+function goHome() {
+    window.scrollTo(0, 0);
+}
+</script>
+
+</body>
+</html>
