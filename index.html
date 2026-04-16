@@ -11,4 +11,145 @@ body {
     background: #f5f0e6;
 }
 
-/* fond
+/* HEADER */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: #e8dcc7;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.search input {
+    width: 300px;
+    padding: 8px;
+    border: 1px solid #aaa;
+    border-radius: 6px;
+}
+
+/* SIDEBAR */
+.sidebar {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    background: #e6d6b8;
+    padding: 10px;
+}
+
+/* CONTENT */
+.content {
+    margin-left: 220px;
+    padding: 20px;
+}
+
+/* PRODUCTS */
+.product {
+    background: white;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    display: inline-block;
+    width: 200px;
+}
+
+button {
+    margin-top: 5px;
+    cursor: pointer;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+    <div class="logo" onclick="home()">Caftan Prestige</div>
+
+    <div class="search">
+        <input id="search" placeholder="Rechercher : jelaba, gandoura...">
+    </div>
+</header>
+
+<div class="sidebar">
+    <h3>Favoris</h3>
+    <p id="fav">Aucun</p>
+
+    <h3>Compte</h3>
+    <p>Se connecter</p>
+
+    <h3>Panier</h3>
+    <p id="cart">Vide</p>
+</div>
+
+<div class="content">
+
+<h2>Nos articles</h2>
+
+<div class="product" data-name="jelaba">
+Jelaba classique <br>
+<button onclick="addCart('Jelaba classique')">Ajouter</button>
+<button onclick="addFav('Jelaba classique')">Favori</button>
+</div>
+
+<div class="product" data-name="gandoura">
+Gandoura élégante <br>
+<button onclick="addCart('Gandoura élégante')">Ajouter</button>
+<button onclick="addFav('Gandoura élégante')">Favori</button>
+</div>
+
+<div class="product" data-name="jabador">
+Jabador traditionnel <br>
+<button onclick="addCart('Jabador')">Ajouter</button>
+<button onclick="addFav('Jabador')">Favori</button>
+</div>
+
+</div>
+
+<script>
+
+let cart = [];
+let fav = [];
+
+/* PANIER */
+function addCart(item){
+    cart.push(item);
+    document.getElementById("cart").innerHTML = cart.join("<br>");
+}
+
+/* FAVORIS */
+function addFav(item){
+    fav.push(item);
+    document.getElementById("fav").innerHTML = fav.join("<br>");
+}
+
+/* SEARCH */
+document.getElementById("search").addEventListener("input", function(){
+    let value = this.value.toLowerCase();
+    let products = document.querySelectorAll(".product");
+
+    products.forEach(p=>{
+        if(p.dataset.name.includes(value)){
+            p.style.display="inline-block";
+        } else {
+            p.style.display="none";
+        }
+    });
+});
+
+/* HOME */
+function home(){
+    window.scrollTo({top:0, behavior:"smooth"});
+}
+
+</script>
+
+</body>
+</html>
