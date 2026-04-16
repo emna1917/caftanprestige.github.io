@@ -5,93 +5,64 @@
 <title>Caftan Prestige</title>
 
 <style>
-body{
-    margin:0;
-    font-family:Arial;
-    background:#f5f0e6;
-}
-
-/* fond chic */
-.background{
-    position:fixed;
-    width:100%;
-    height:100%;
-    background:url("https://images.unsplash.com/photo-1520975928312-5c2c3d5b1c6a");
-    background-size:cover;
-    background-position:center;
-    opacity:0.12;
-    z-index:-1;
+body {
+    margin: 0;
+    font-family: Arial;
+      background: #f5f0e6;
 }
 
 /* HEADER */
-header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:15px;
-    background:rgba(232,220,199,0.95);
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: #e8dcc7;
 }
 
-/* LOGO */
-.logo{
-    font-weight:bold;
-    font-size:22px;
-    cursor:pointer;
-    letter-spacing:2px;
+.logo {
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
 }
 
-/* SEARCH */
-.search input{
-    width:320px;
-    padding:10px;
-    border:1px solid #aaa;
-    border-radius:8px;
-    text-align:center;
+.search input {
+    width: 300px;
+    padding: 8px;
+    border: 1px solid #aaa;
+    border-radius: 6px;
 }
 
 /* SIDEBAR */
-.sidebar{
-    position:fixed;
-    top:60px;
-    left:0;
-    width:220px;
-    height:100%;
-    background:#e6d6b8;
-    padding:10px;
-}
-
-.sidebar h3{
-    margin-top:15px;
+.sidebar {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    background: #e6d6b8;
+    padding: 10px;
 }
 
 /* CONTENT */
-.content{
-    margin-left:240px;
-    padding:20px;
+.content {
+    margin-left: 220px;
+    padding: 20px;
 }
 
 /* PRODUCTS */
-.product{
-    background:white;
-    margin:10px;
-    padding:15px;
-    border-radius:10px;
-    display:inline-block;
-    width:200px;
-    transition:0.3s;
+.product {
+    background: white;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    display: inline-block;
+    width: 200px;
 }
 
-.product:hover{
-    transform:scale(1.05);
-}
-
-/* BUTTONS */
-button{
-    margin-top:5px;
-    padding:5px;
-    border:none;
-    border-radius:5px;
-    cursor:pointer;
+button {
+    margin-top: 5px;
+    cursor: pointer;
 }
 </style>
 
@@ -99,24 +70,22 @@ button{
 
 <body>
 
-<div class="background"></div>
-
 <header>
-    <div class="logo" onclick="home()">CAFTAN PRESTIGE</div>
+    <div class="logo" onclick="home()">Caftan Prestige</div>
 
     <div class="search">
-        <input id="search" placeholder="Rechercher : jelaba, gandoura, jabador...">
+        <input id="search" placeholder="Rechercher : jelaba, gandoura...">
     </div>
 </header>
 
 <div class="sidebar">
-    <h3>Favoris (<span id="favCount">0</span>)</h3>
+    <h3>Favoris</h3>
     <p id="fav">Aucun</p>
 
     <h3>Compte</h3>
     <p>Se connecter</p>
 
-    <h3>Panier (<span id="cartCount">0</span>)</h3>
+    <h3>Panier</h3>
     <p id="cart">Vide</p>
 </div>
 
@@ -153,14 +122,12 @@ let fav = [];
 function addCart(item){
     cart.push(item);
     document.getElementById("cart").innerHTML = cart.join("<br>");
-    document.getElementById("cartCount").innerText = cart.length;
 }
 
 /* FAVORIS */
 function addFav(item){
     fav.push(item);
     document.getElementById("fav").innerHTML = fav.join("<br>");
-    document.getElementById("favCount").innerText = fav.length;
 }
 
 /* SEARCH */
