@@ -1,0 +1,24 @@
+let history = [];
+
+/* Quand on ajoute au panier */
+function addCart(item){
+    cart.push(item);
+    history.push(item);
+    document.getElementById("cart").innerHTML = cart.join("<br>");
+    recommend();
+}
+
+/* RECOMMANDATION */
+function recommend(){
+    let reco = document.getElementById("reco");
+
+    if(history.includes("Jelaba classique")){
+        reco.innerHTML = "Suggestion : Gandoura élégante";
+    }
+    else if(history.includes("Gandoura élégante")){
+        reco.innerHTML = "Suggestion : Jabador traditionnel";
+    }
+    else{
+        reco.innerHTML = "Explorez nos collections";
+    }
+}
